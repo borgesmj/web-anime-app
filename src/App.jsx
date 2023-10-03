@@ -1,12 +1,15 @@
 import { useState } from 'react'
 
+import Sidebar from './Components/Sidebar'
+import HeroBtn from './Components/HeroBtn'
+
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [sideBar, setSideBar] = useState(false)
 
   return (
-    <>
-    hola mundo
-    </>
+    <div className='max-w-full py-5'>
+    </div>
   )
 }
 
