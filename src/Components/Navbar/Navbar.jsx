@@ -1,33 +1,34 @@
 import React from "react";
 import "./Navbar.css";
+import { NavLink, Link } from "react-router-dom";
 
 const Navbar = ({ genresList, formatsList }) => {
   return (
     <nav className="p-5 h-8 flex flex-row items-center justify-between">
       <input type="checkbox" name="" id="navbar_checkbox" className="navbar_checkbox hidden" />
-      <a href="" className="h-4 w-10">
+      <NavLink to="/web-anime-app/ss" className="h-4 w-10">
         home
-      </a>
+      </NavLink>
       <ul className="nav-list flex-col bg-blue-900 fixed top-20 w-3/4 flex opacity-0 px-3 md:py-5 lg:flex lg:top-0 lg:left-40 lg:opacity-100 lg:flex-row lg:justify-between lg:items-center lg:h-4 lg:static lg:bg-blue-900 text-white">
         <li className="navbar_option ">
-          <a href="" className="text-xl md:text-3xl">Home</a>
+          <NavLink to="/web-anime-app/" className="text-xl md:text-3xl w-full flex justify-center items-center z-0">Home</NavLink>
         </li>
         {formatsList.map((item) => (
           <li key={`format_name_${item}`} className="navbar_option">
-            <a href="" className="text-xl md:text-3xl">
-              {item}
-            </a>
+            <NavLink to={`/web-anime-app/${item.toLowerCase()}`} className="text-xl md:text-3xl  z-0">
+        {item}
+      </NavLink>
           </li>
         ))}
         <li className="lg:relative navbar_option">
-          <a className="text-xl md:text-3xl group" href="">
+          <div className="text-xl md:text-3xl group">
             Genres
-          </a>
+          </div>
           <ul className="genres-list grid grid-cols-3 lg:hidden lg:bg-blue-900 lg:w-1/3 lg:fixed lg:right-[-1rem] lg:top-[-2rem] lg:z-[1] lg:bg-clip-content lg:pl-12 lg:pr-4 lg:pt-28 lg:pb-8;">
             {genresList.map((item) => (
               <li
                 key={`genre_name_${item}`}
-                className="text-xs leading-8 md:text-lg md:leading-10 opacity-50 hover:opacity-100 "
+                className="text-xs leading-8 md:text-lg md:leading-10 lg:opacity-50 hover:opacity-100 "
               >
                 {item}
               </li>
