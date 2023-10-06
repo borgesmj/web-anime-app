@@ -34,6 +34,10 @@ nav > label > span{
         display: grid;
       }
 
+      .formats_group:hover ~ .formats_list,
+      .formats_list:hover {
+        display: grid;
+      }
       .navbar_option{
         width: calc(100% / 7);
         display: flex;
