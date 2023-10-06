@@ -59,7 +59,7 @@ const Navbar = ({ genresList, formatsList }) => {
                 key={`genre_name_${item}`}
                 className="text-xs leading-8 md:text-lg md:leading-10 lg:opacity-50 hover:opacity-100 "
               >
-                {item}
+                <NavLink to={`/web-anime-app/genres/${item.toLowerCase().replace(' ', '-')}`}>{item}</NavLink>
               </li>
             ))}
           </ul>
