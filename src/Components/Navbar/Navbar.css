@@ -29,15 +29,7 @@ nav > label > span{
 }
 
 @media (width>=1024px) {
-     .group:hover ~ .genres-list,
-      .genres-list:hover {
-        display: grid;
-      }
 
-      .formats_group:hover ~ .formats_list,
-      .formats_list:hover {
-        display: grid;
-      }
       .navbar_option{
         width: calc(100% / 7);
         display: flex;

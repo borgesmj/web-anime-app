@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 import Navbar from './Components/Navbar/Navbar'
+import Sidebar from './Components/Sidebar/Sidebar'
 
 function App() {
 
@@ -74,10 +75,13 @@ function App() {
 
 
   return (
-    <div className='max-w-full py-5 bg-blue-900'>
+    <div className='max-w-full py-5'>
       <Navbar
         genresList = {genresList}
         formatsList = {formatsList}
+      />
+      <Sidebar
+        animeOnTV = {animeOnTV}
       />
     </div>
   )
