@@ -81,7 +81,7 @@ const Navbar = ({ genresList, formatsList }) => {
               <li key={`format_name_${item}`} className="">
                 <NavLink
                   to={`/web-anime-app/formats/${item.toLowerCase()}`}
-                  className="text-xs leading-8 md:text-lg md:leading-10 lg:opacity-70 hover:opacity-100 select-none"
+                  className=" format text-xs leading-8 md:text-lg md:leading-10 lg:opacity-70 hover:opacity-100 select-none"
                 >
                   {item}
                 </NavLink>
@@ -106,7 +106,7 @@ const Navbar = ({ genresList, formatsList }) => {
             {genresList.map((item) => (
               <li
                 key={`genre_name_${item}`}
-                className=" text-xs leading-8 md:text-lg md:leading-10 lg:opacity-70 hover:opacity-100 select-none"
+                className="genre text-xs leading-8 md:text-lg md:leading-10 lg:opacity-70 hover:opacity-100 select-none"
               >
                 <NavLink
                   to={`/web-anime-app/genres/${item

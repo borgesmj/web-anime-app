@@ -57,5 +57,29 @@ nav > label > span{
       .navbar_option:hover::before{
         width: 100%;
       }
+
+      .genre,
+      .format{
+        position: relative;
+        text-align: center;
+      }
+
+      .genre::before,
+      .format::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-bottom: 3px solid rgb(202, 5, 5);
+        width: 0px;
+        transition: all 0.5s ease 0s;
+      }
+
+      .genre:hover::before,
+      .format:hover::before{
+        width: 100%;
+      }
       
 }
