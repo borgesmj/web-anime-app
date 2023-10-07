@@ -14,7 +14,7 @@ const Navbar = ({ genresList, formatsList }) => {
     setShowFormats(!showFormats);
   };
 
-  const hanldeGenresClick = (e) => {
+  const handleGenresClick = (e) => {
     e.preventDefault();
     setShowFormats(false);
     setShowGenres(!showGenres);
@@ -43,7 +43,7 @@ const Navbar = ({ genresList, formatsList }) => {
     };
   }, []);
   return (
-    <nav className="p-9 h-8 flex flex-row items-center justify-between bg-blue-900 fixed w-full top-0">
+    <nav className="p-9 h-8 flex flex-row items-center justify-between bg-accent-100 fixed w-full top-0">
       <input
         type="checkbox"
         name=""
@@ -53,7 +53,7 @@ const Navbar = ({ genresList, formatsList }) => {
       <NavLink to="/web-anime-app/" className="h-4 w-10">
         home
       </NavLink>
-      <ul className="nav-list flex-col bg-blue-900 z-0  fixed top-[4.5rem] w-3/4 flex opacity-0 px-3 md:py-5 lg:flex lg:top-0 lg:left-40 lg:opacity-100 lg:flex-row lg:justify-between lg:items-center lg:h-4 lg:static lg:bg-blue-900 text-white">
+      <ul className="nav-list bg-accent-100 flex-col lg:bg-transparent z-0  fixed top-[4.5rem] w-3/4 flex opacity-0 px-3 md:py-5 lg:flex lg:top-0 lg:left-40 lg:opacity-100 lg:flex-row lg:justify-between lg:items-center lg:h-4 lg:static lg:bg-transparent text-white">
         <li className="navbar_option ">
           {/* navbar option #1 Home */}
           <NavLink
@@ -73,15 +73,15 @@ const Navbar = ({ genresList, formatsList }) => {
             Formats
           </div>
           <ul
-            className={`formats_list grid grid-cols-3 lg:bg-blue-900 lg:w-1/3  lg:fixed lg:right-72 lg:top-[4.5rem] lg:z-[-1] ${
+            className={`formats_list grid grid-cols-3 lg:bg-accent-100 lg:w-1/3  lg:fixed lg:right-72 lg:top-[4.5rem] lg:z-[-1] ${
               !showFormats ? "lg:hidden" : ""
-            } lg:pl-12 lg:pr-4 lg:pt-8 lg:pb-8`}
+            } lg:pl-12 lg:pr-4 lg:pt-8 lg:pb-8 lg:rounded-b-xl lg:shadow-lg lg:shadow-black`}
           >
             {formatsList.map((item) => (
               <li key={`format_name_${item}`} className="">
                 <NavLink
                   to={`/web-anime-app/formats/${item.toLowerCase()}`}
-                  className=" format text-xs leading-8 md:text-lg md:leading-10 lg:opacity-70 hover:opacity-100 select-none"
+                  className=" format text-xs leading-8 select-none md:text-lg md:leading-10 lg:opacity-80 lg:hover:font-bold hover:opacity-100"
                 >
                   {item}
                 </NavLink>
@@ -93,27 +93,26 @@ const Navbar = ({ genresList, formatsList }) => {
         <li className="lg:relative navbar_option">
           <div
             ref={genresRef}
-            onClick={hanldeGenresClick}
+            onClick={handleGenresClick}
             className="text-xl md:text-3xl w-full flex justify-center items-center z-0 md:mt-8 lg:mt-0 group select-none"
           >
             Genres
           </div>
           <ul
-            className={`genres-list grid grid-cols-3 lg:bg-blue-900 lg:w-1/3 lg:fixed lg:right-[-1rem] lg:top-[4.5rem] lg:z-[1] ${
+            className={`genres-list grid grid-cols-3 lg:bg-accent-100 lg:w-1/3  lg:fixed lg:right-[0] lg:top-[4.5rem] lg:z-[-1] ${
               !showGenres ? "lg:hidden" : ""
-            } lg:pl-12 lg:pr-4 lg:pt-8 lg:pb-8`}
+            } lg:pl-12 lg:pr-4 lg:pt-8 lg:pb-8 lg:rounded-b-xl lg:shadow-lg lg:shadow-black`}
           >
             {genresList.map((item) => (
               <li
                 key={`genre_name_${item}`}
-                className="genre text-xs leading-8 md:text-lg md:leading-10 lg:opacity-70 hover:opacity-100 select-none"
+                className=""
               >
                 <NavLink
-                  to={`/web-anime-app/genres/${item
-                    .toLowerCase()
-                    .replace(" ", "-")}`}
+                  to={`/web-anime-app/genres/${encodeURIComponent(item.toLowerCase())}`}
+                  className='genre text-xs leading-8 md:text-lg md:leading-10 lg:opacity-80 lg:hover:font-bold hover:opacity-100 select-none'
                 >
-                  {item}
+                    {item}
                 </NavLink>
               </li>
             ))}
@@ -124,9 +123,9 @@ const Navbar = ({ genresList, formatsList }) => {
         htmlFor="navbar_checkbox"
         className="burger-menu flex flex-col justify-between w-10 h-10 lg:hidden "
       >
-        <span className="border-b-4 border-white border-solid opacity-100"></span>
-        <span className="border-b-4 border-white border-solid opacity-100"></span>
-        <span className="border-b-4 border-white border-solid opacity-100"></span>
+        <span className="border-b-4 border-text.200 border-solid opacity-100"></span>
+        <span className="border-b-4 border-text.200 border-solid opacity-100"></span>
+        <span className="border-b-4 border-text.200 border-solid opacity-100"></span>
       </label>
     </nav>
   );
