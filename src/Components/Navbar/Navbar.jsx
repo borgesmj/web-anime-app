@@ -60,6 +60,7 @@ const Navbar = ({ genresList, formatsList }) => {
         id="navbar_checkbox"
         className="navbar_checkbox hidden"
         checked={showNavBar}
+        readOnly
       />
       <NavLink to="/web-anime-app/" className="h-4 w-10">
         home
