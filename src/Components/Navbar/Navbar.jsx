@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Navbar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Navbar = ({ genresList, formatsList }) => {
   const [showGenres, setShowGenres] = useState(false);
   const [showFormats, setShowFormats] = useState(false);
+  const [showNavBar, setShowNavBar] = useState(false)
   const genresRef = useRef(null);
   const formatsRef = useRef(null);
   
@@ -42,6 +43,15 @@ const Navbar = ({ genresList, formatsList }) => {
       document.removeEventListener("click", handleOutsideClick);
     };
   }, []);
+
+  const handleShowNavbar = () => {
+    setShowNavBar(!showNavBar)
+  }
+
+  const location = useLocation()
+  useEffect(() => {
+      setShowNavBar(false)
+  }, [location.pathname])
   return (
     <nav className="p-9 h-8 flex flex-row items-center justify-between bg-accent-100 fixed w-full top-0">
       <input
@@ -49,6 +59,7 @@ const Navbar = ({ genresList, formatsList }) => {
         name=""
         id="navbar_checkbox"
         className="navbar_checkbox hidden"
+        checked={showNavBar}
       />
       <NavLink to="/web-anime-app/" className="h-4 w-10">
         home
@@ -122,6 +133,7 @@ const Navbar = ({ genresList, formatsList }) => {
       <label
         htmlFor="navbar_checkbox"
         className="burger-menu flex flex-col justify-between w-10 h-10 lg:hidden "
+        onClick={handleShowNavbar}
       >
         <span className="border-b-4 border-text.200 border-solid opacity-100"></span>
         <span className="border-b-4 border-text.200 border-solid opacity-100"></span>
