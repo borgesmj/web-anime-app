@@ -85,7 +85,7 @@ const Navbar = ({ genresList, formatsList }) => {
             Formats
           </div>
           <ul
-            className={`formats_list grid grid-cols-3 lg:bg-accent-100 lg:w-1/3  lg:fixed lg:right-72 lg:top-[4.5rem] lg:z-[-1] ${
+            className={`formats_list grid grid-cols-3 lg:bg-accent-100 lg:w-1/3  lg:fixed lg:right-72 lg:top-[4.5rem] lg:z-[0] ${
               !showFormats ? "lg:hidden" : ""
             } lg:pl-12 lg:pr-4 lg:pt-8 lg:pb-8 lg:rounded-b-xl lg:shadow-lg lg:shadow-black`}
           >

@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-
+import { Route, Routes } from 'react-router-dom'
 import Navbar from './Components/Navbar/Navbar'
 import Sidebar from './Components/Sidebar/Sidebar'
+import FormatGrid from './Components/FormatGrid/FormatGrid'
+import GenreGrid from './Components/GenreGrid/Genregrid'
+
 
 function App() {
 
@@ -75,7 +78,7 @@ function App() {
 
 
   return (
-    <div className='max-w-full py-5'>
+    <div className='max-w-full py-5 overflow-hidden max-h-screen'>
       <Navbar
         genresList = {genresList}
         formatsList = {formatsList}
@@ -83,6 +86,27 @@ function App() {
       <Sidebar
         animeOnTV = {animeOnTV}
       />
+      {/* Main */}
+       <Routes>
+            {formatsList.map((item) => (
+              <Route
+                path={`/web-anime-app/formats/${item.toLowerCase()}`}
+                key={`format_id_${item}`}
+                element={<FormatGrid
+                  format = {item}
+                />}
+              ></Route>
+            ))}
+            {genresList.map((item) => (
+              <Route
+                path={`/web-anime-app/genres/${encodeURIComponent(item.toLowerCase())}`}
+                key={`genre_id_${item}`}
+                element={<GenreGrid
+                  genre = {item}
+                />}
+              ></Route>
+            ))}
+       </Routes>
     </div>
   )
 }

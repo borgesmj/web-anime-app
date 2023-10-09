@@ -15,7 +15,7 @@ const Sidebar = ({ animeOnTV }) => {
           <Arrow />
         </label>
       </h3>
-      <ul className="w-full hidden md:block">
+      <ul className="w-full hidden md:block overflow-scroll z-[-1]">
         {animeOnTV.map((item) => (
           <li key={`key_${item._id}`} className="trasmission-item w-full">
             <NavLink
