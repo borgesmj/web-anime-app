@@ -11,11 +11,11 @@ const Sidebar = ({ animeOnTV }) => {
       <input type="checkbox" name="" id="sidebar_arrow" className="hidden" />
       <h3 className="text-xl flex flex-row justify-between items-center py-4">
         Animes on transmission{" "}
-        <label className="sidebar_arrow lg:hidden" htmlFor="sidebar_arrow">
+        <label className="sidebar_arrow md:hidden" htmlFor="sidebar_arrow">
           <Arrow />
         </label>
       </h3>
-      <ul className="w-full hidden lg:block">
+      <ul className="w-full hidden md:block">
         {animeOnTV.map((item) => (
           <li key={`key_${item._id}`} className="trasmission-item w-full">
             <NavLink
