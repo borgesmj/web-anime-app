@@ -1,6 +1,12 @@
 import React from 'react'
 
-const AnimeGrid = ({format}) => {
+const AnimeGrid = ({format, allAnime}) => {
+
+  const filteredData = allAnime.filter((item) => {
+    return item.type === format;
+  });
+  
+  console.log(filteredData);
   return (
     <div className='absolute top-40 w-full z-[-2]  px-8 md:px-[1rem] md:w-3/5 md:top-20 md:left-[19rem] lg:left-[18rem] lg:w-4/5 py-4'>
       {format}

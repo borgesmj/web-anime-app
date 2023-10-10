@@ -5,7 +5,6 @@ import "./Sidebar.css";
 import { NavLink } from "react-router-dom";
 
 const Sidebar = ({ animeOnTV }) => {
-  console.log(animeOnTV);
   return (
     <div className="sidebar w-full absolute top-20 z-[-1] md:w-2/5 bg-bg-200 lg:w-1/5 text-center px-4">
       <input type="checkbox" name="" id="sidebar_arrow" className="hidden" />
@@ -15,7 +14,7 @@ const Sidebar = ({ animeOnTV }) => {
           <Arrow />
         </label>
       </h3>
-      <ul className="w-full hidden md:block overflow-scroll z-[-1]">
+      <ul className="w-full hidden md:block z-[-1]">
         {animeOnTV.map((item) => (
           <li key={`key_${item._id}`} className="trasmission-item w-full">
             <NavLink
@@ -35,6 +34,16 @@ const Sidebar = ({ animeOnTV }) => {
           </li>
         ))}
       </ul>
+      <span className="text-xs hidden md:block">
+        API's last Update{" "}
+        <a
+          className="font-bold underline"
+          href="https://rapidapi.com/brian.rofiq/api/anime-db"
+          target="blank"
+        >
+          5 months ago
+        </a>
+      </span>
     </div>
   );
 };

@@ -62,11 +62,11 @@ const Navbar = ({ genresList, formatsList }) => {
         checked={showNavBar}
         readOnly
       />
-      <NavLink to="/web-anime-app/" className="h-4 w-10">
+      <NavLink to="/web-anime-app/" className={`h-4 w-10`}>
         home
       </NavLink>
       <ul className="nav-list bg-accent-100 flex-col lg:bg-transparent z-0  fixed top-[4.5rem] w-3/4 flex opacity-0 px-3 md:py-5 lg:flex lg:top-0 lg:left-40 lg:opacity-100 lg:flex-row lg:justify-between lg:items-center lg:h-4 lg:static lg:bg-transparent text-white lg:w-1/3">
-        <li className="navbar_option ">
+        <li className={`navbar_option`}>
           {/* navbar option #1 Home */}
           <NavLink
             to="/web-anime-app/"

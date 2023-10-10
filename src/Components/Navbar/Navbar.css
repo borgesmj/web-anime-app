@@ -84,7 +84,10 @@ nav > label > span{
 
       .active-nav-option_text{
         opacity: 1;
+      }
 
+      .active{
+        opacity: 1;
       }
 
       .active-nav-option:before{

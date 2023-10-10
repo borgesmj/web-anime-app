@@ -10,6 +10,10 @@ h3 > label{
     display: block;
 }
 
+#sidebar_arrow:checked ~ span{
+    display: block;
+}
+
 
 @media (width >= 1024px) {
     .trasmission-item:hover{

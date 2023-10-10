@@ -1,0 +1,11 @@
+@media (width >= 1024px) {
+    .anime_link:hover > img {
+        transform: scale(1.1); 
+        transition: transform 0.2s ease-in-out; 
+      }
+
+    .anime_link:hover > span{
+        opacity: 0;
+        transition:  opacity 0.2s ease-in-out;
+    }
+}
