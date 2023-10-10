@@ -99,7 +99,7 @@ function App() {
             ))}
             {genresList.map((item) => (
               <Route
-                path={`/web-anime-app/genres/${encodeURIComponent(item.toLowerCase())}`}
+                path={`/web-anime-app/genres/${item.toLowerCase().replace(/ /g, '-')}`}
                 key={`genre_id_${item}`}
                 element={<GenreGrid
                   genre = {item}

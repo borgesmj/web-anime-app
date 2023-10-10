@@ -93,7 +93,7 @@ const Navbar = ({ genresList, formatsList }) => {
               <li key={`format_name_${item}`} className="">
                 <NavLink
                   to={`/web-anime-app/formats/${item.toLowerCase()}`}
-                  className=" format text-xs leading-8 select-none md:text-lg md:leading-10 lg:opacity-80 lg:hover:font-bold hover:opacity-100"
+                  className=" format text-xs leading-8 select-none md:text-lg md:leading-10 lg:opacity-80  hover:opacity-100"
                 >
                   {item}
                 </NavLink>
@@ -121,8 +121,8 @@ const Navbar = ({ genresList, formatsList }) => {
                 className=""
               >
                 <NavLink
-                  to={`/web-anime-app/genres/${encodeURIComponent(item.toLowerCase())}`}
-                  className='genre text-xs leading-8 md:text-lg md:leading-10 lg:opacity-80 lg:hover:font-bold hover:opacity-100 select-none'
+                  to={`/web-anime-app/genres/${item.toLowerCase().replace(/ /g, '-')}`}
+                  className='genre text-xs leading-8 md:text-lg md:leading-10 lg:opacity-80  hover:opacity-100 select-none'
                 >
                     {item}
                 </NavLink>
