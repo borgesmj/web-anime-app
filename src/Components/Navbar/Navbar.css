@@ -81,5 +81,22 @@ nav > label > span{
       .format:hover::before{
         width: 100%;
       }
+
+      .active-nav-option_text{
+        opacity: 1;
+
+      }
+
+      .active-nav-option:before{
+        width: 100%;
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-bottom: 3px solid #ffffff;
+        transition: all 0.5s ease 0s;
+      }
       
 }

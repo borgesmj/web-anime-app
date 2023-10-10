@@ -27,7 +27,7 @@ const Sidebar = ({ animeOnTV }) => {
               <Play />
               <span className="text-left w-3/5">
                 {item.title.length > 14
-                  ? `${item.title.slice(0, 14)}...`
+                  ? `${item.title.slice(0, 13)}...`
                   : item.title}
               </span>
               <div className="bg-bg-300 px-2 rounded-lg">watch</div>
