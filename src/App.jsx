@@ -1,11 +1,17 @@
+//Dependencies
 import { useEffect, useState } from "react";
 import axios, { all } from "axios";
 import { Route, Routes } from "react-router-dom";
+
+//Components
 import Navbar from "./Components/Navbar/Navbar";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import FormatGrid from "./Pages/FormatGrid/FormatGrid";
+
+// Pages
 import GenreGrid from "./Pages/GenreGrid/Genregrid";
 import Homepage from "./Pages/Homepage/Homepage";
+import AnimePage from "./Pages/AnimePage/AnimePage";
 
 function App() {
   const [data, setData] = useState([]); // Toda la data de titulos divididos en paginas
@@ -69,7 +75,7 @@ function App() {
     fetchData();
   }, []);
 
-  console.log(personalFavorites);
+  console.log(animeOnTV);
   return (
     <div className="max-w-full py-5 overflow-hidden max-h-screen">
       <Navbar genresList={genresList} formatsList={formatsList} />
@@ -95,6 +101,10 @@ function App() {
         <Route
           path="/web-anime-app/"
           element={<Homepage data={data} />}
+        ></Route>
+        <Route
+          path="web-anime-app/anime/:name"
+          element={<AnimePage allAnime={allAnime} />}
         ></Route>
       </Routes>
     </div>
