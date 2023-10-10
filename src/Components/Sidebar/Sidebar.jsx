@@ -2,15 +2,27 @@ import "./Sidebar.css";
 import Play from "../Icons/Play";
 import Arrow from "../Icons/Arrow";
 import "./Sidebar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const Sidebar = ({ animeOnTV }) => {
+
+  const [showSideBar, setShowSideBar] = useState(false)
+
+  const handleShowSideBar = () => {
+    setShowSideBar(!showSideBar)
+  }
+
+  const location = useLocation()
+  useEffect(() => {
+      setShowSideBar(false)
+  }, [location.pathname])
   return (
     <div className="sidebar w-full absolute top-20 z-[-1] md:w-2/5 bg-bg-200 lg:w-1/5 text-center px-4">
-      <input type="checkbox" name="" id="sidebar_arrow" className="hidden" />
+      <input type="checkbox" name="" id="sidebar_arrow" readOnly checked={showSideBar} className="hidden" />
       <h3 className="text-xl flex flex-row justify-between items-center py-4">
         Animes on transmission{" "}
-        <label className="sidebar_arrow md:hidden" htmlFor="sidebar_arrow">
+        <label className="sidebar_arrow md:hidden" onClick={handleShowSideBar}>
           <Arrow />
         </label>
       </h3>
