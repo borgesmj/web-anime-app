@@ -18,9 +18,7 @@ const Sidebar = ({ animeOnTV }) => {
         {animeOnTV.map((item) => (
           <li key={`key_${item._id}`} className="trasmission-item w-full">
             <NavLink
-              to={`/web-anime-app/anime/${encodeURIComponent(
-                item.title.toLowerCase()
-              )}`}
+              to={`/web-anime-app/anime/${item.title.toLowerCase().replace(/ /g, '-')}`}
               className="w-full flex flex-row justify-between items-center mt-4 mb-4"
             >
               <Play />
