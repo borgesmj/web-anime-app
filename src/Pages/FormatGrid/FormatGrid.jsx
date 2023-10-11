@@ -32,11 +32,11 @@ const AnimeGrid = ({ format, allAnime }) => {
         <span>{format}</span>
       </h1>
       <div className="flex flex-col justify-center items-center md:grid md:grid-cols-2 lg:grid-cols-4">
-        {filteredData.slice(0, maxLength).map((item) => (
+        {filteredData.slice(0, maxLength).map((item, index) => (
           <AnimeTitle
             name={item.title}
             image={item.image}
-            key={`format_key_${item.title}}`}
+            key={`${index}_format_key_${item.title.replace(/ /g, '-')}}`}
           />
         ))}
       </div>
