@@ -38,14 +38,16 @@ function App() {
         setPersonalFavorites(
           titulos.filter((item) => {
             return (
-              item.title === "Shingeki no Kyojin" ||
-              item.title === "Fullmetal Alchemist: Brotherhood" ||
-              item.title === "Vinland Saga" ||
-              item.title === "Jujutsu Kaisen" ||
-              item.title === "Kimetsu no Yaiba"
+              item.title.includes("Shingeki no Kyojin") ||
+              item.title.includes("Fullmetal Alchemist: Brotherhood") ||
+              item.title.includes("Vinland Saga") ||
+              item.title.includes("Jujutsu Kaisen") ||
+              item.title.includes("Kimetsu no Yaiba") ||
+              item.title.includes("Naruto")
             );
           })
         );
+
         let uniqueGenre = [];
 
         titulos.forEach((item) => {
@@ -76,7 +78,7 @@ function App() {
     fetchData();
   }, []);
 
-  console.log(animeOnTV);
+  console.log(personalFavorites);
   return (
     <div className="max-w-full py-5 overflow-hidden max-h-screen">
       <Navbar genresList={genresList} formatsList={formatsList} />
@@ -101,7 +103,7 @@ function App() {
         ))}
         <Route
           path="/web-anime-app/"
-          element={<Homepage data={data} />}
+          element={<Homepage personalFavorites={personalFavorites} />}
         ></Route>
         <Route
           path="web-anime-app/anime/:name"

@@ -55,9 +55,11 @@ const Directory = ({ allAnime }) => {
                   item.title.startsWith(letter.toUpperCase())
                 );
               })
-              .map((anime) => (
+              .map((anime, index) => (
                 <AnimeTitle
-                  key={anime._id}
+                  key={`${index}_directory_${anime.title.replace(/ /g, "-")}_${
+                    anime._id
+                  }`}
                   name={anime.title}
                   image={anime.image}
                 />
@@ -65,7 +67,7 @@ const Directory = ({ allAnime }) => {
           </div>
         </div>
       ))}
-      <div className="flex flex-col text-[0.8rem] justify-center items-center font-bold w-fit fixed md:top-[14%] bottom-0 right-0">
+      <div className="flex flex-col text-[0.8rem] justify-center items-center font-bold w-fit fixed md:top-[14%] bottom-0 right-4">
         {letters.map((item) => (
           <a key={`list_${item}`} href={`#section_${item}`}>
             {item.toUpperCase()}
