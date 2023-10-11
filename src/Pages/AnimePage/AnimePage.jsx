@@ -8,8 +8,10 @@ const AnimePage = ({ allAnime }) => {
     return item.title.toLowerCase() === name;
   });
 
+  const animeSynopsis = filteredAnime[0]?.synopsis.split('[')
+
+  console.log(animeSynopsis[0])
   const navigate = useNavigate();
-  console.log(navigate);
   return (
     <div className="absolute top-40 w-full z-[-2]  px-8 md:px-[1rem] md:w-3/5 md:top-20 md:left-[19rem] lg:left-[18rem] lg:w-4/5 py-4  ">
       <NavLink onClick={() => navigate(-1)}>
@@ -39,7 +41,7 @@ const AnimePage = ({ allAnime }) => {
           ))}
         </div>
         <p className="mt-4 font-bold">Sypnosis:</p>
-        <span>{filteredAnime[0]?.synopsis}</span>
+        <span>{animeSynopsis[0]}</span>
       </div>
       <p className="mt-4 font-bold">Status:</p>
       <span className="">{filteredAnime[0]?.status}</span>
