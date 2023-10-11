@@ -23,6 +23,7 @@ const Genregrid = ({genre, allAnime}) => {
       setLoading(false);
     }, 1500);
   };
+  console.log(filteredData)
   return (
     <div className="absolute top-40 w-full z-[-2]  px-8 md:px-[1rem] md:w-3/5 md:top-20 md:left-[19rem] lg:left-[18rem] lg:w-4/5 py-4  ">
       <h1 className="w-full  text-center font-bold md:text-xl">{genre}</h1>
