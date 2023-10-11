@@ -130,6 +130,14 @@ const Navbar = ({ genresList, formatsList }) => {
             ))}
           </ul>
         </li>
+        <li className={`navbar_option`}>
+          <NavLink
+            className="text-xl md:text-3xl w-full flex justify-center items-center z-0 md:mt-8 lg:mt-0 lg:text-lg lg:font-bold lg:opacity-60 lg:hover:opacity-100"
+            to={"web-anime-app/directory/"}
+          >
+            Directory
+          </NavLink>
+        </li>
       </ul>
       <label
         htmlFor="navbar_checkbox"

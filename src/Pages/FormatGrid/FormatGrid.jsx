@@ -28,25 +28,16 @@ const AnimeGrid = ({ format, allAnime }) => {
   return (
     <div className="absolute top-40 w-full z-[-2]  px-8 md:px-[1rem] md:w-3/5 md:top-20 md:left-[19rem] lg:left-[18rem] lg:w-4/5 py-4  ">
       <h1 className="w-full  text-left md:text-lg">
-        <NavLink>
-          All Anime
-        </NavLink>
-        {' '}
-        &gt;
-        {' '}
-        <NavLink>
-          Formats
-        </NavLink>
-        {' '}
-        &gt;
-        {' '}
-        <span>
-          {format}
-        </span>
+        <NavLink>All Anime</NavLink> &gt; <NavLink>Formats</NavLink> &gt;{" "}
+        <span>{format}</span>
       </h1>
       <div className="flex flex-col justify-center items-center md:grid md:grid-cols-2 lg:grid-cols-4">
         {filteredData.slice(0, maxLength).map((item) => (
-          <AnimeTitle name={item.title} image={item.image} key={`format_key_${item.title}}`} />
+          <AnimeTitle
+            name={item.title}
+            image={item.image}
+            key={`format_key_${item.title}}`}
+          />
         ))}
       </div>
       {filteredData.length > maxLength ? (

@@ -12,6 +12,7 @@ import FormatGrid from "./Pages/FormatGrid/FormatGrid";
 import GenreGrid from "./Pages/GenreGrid/Genregrid";
 import Homepage from "./Pages/Homepage/Homepage";
 import AnimePage from "./Pages/AnimePage/AnimePage";
+import Directory from "./Pages/Directory/Directory";
 
 function App() {
   const [data, setData] = useState([]); // Toda la data de titulos divididos en paginas
@@ -105,6 +106,10 @@ function App() {
         <Route
           path="web-anime-app/anime/:name"
           element={<AnimePage allAnime={allAnime} />}
+        ></Route>
+        <Route
+          path="web-anime-app/directory/"
+          element={<Directory allAnime={allAnime} />}
         ></Route>
       </Routes>
     </div>
